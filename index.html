@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery || animation</title>
+    <style>
+        .animationBtn{
+            
+        }
+        .box{
+            position: relative;
+            height: 300px;
+            width: 700px;
+            background-color: green;
+            margin-top: 60px;
+        }
+        .circle{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red;
+            height: 0px;
+            width: 0px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <button id="animationBtn" >start animation</button>
+    <button id="stopAnimation" >Stop Animation</button>
+    <div class="box" id="box">
+        <div class="circle" id="circle"></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#animationBtn").click(function(){
+                $("#circle").animate({
+                    marginLeft: '50%',
+                    transform:"translateX(-50%)",
+                    marginTop: 100,
+                    height: 120,
+                    width: 120,
+
+                }, 6000);
+            });
+            $("#stopAnimation").click(function(){
+                $("#circle").stop();
+            })
+        });
+    </script>
+
+</body>
+</html>
